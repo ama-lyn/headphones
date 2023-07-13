@@ -1,0 +1,265 @@
+/* Reset / Normalize
+   ============================= */
+
+
+/* Variables
+   ============================= */
+
+
+   :root{
+    --color-primary: #FF6565;
+    --color-black:  #090909;
+    --color-white: #ffffff;
+
+    --text-color: var(--color-black);
+
+    --font-family-base: 'Source Sans Pros', sans-serif;
+    --font-family-title: 'Source Sans Pros', sans-serif;
+
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+  
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+  
+    --line-height-small: 1.2;
+    --line-height-base: 1.5;
+    --line-height-big: 1.8;
+
+    /** NAVBAR **/
+    --nav-item-font-family: var(--font-family-headings);
+    --nav-item-font-weight: var(--font-weight-bold);
+    --nav-item-font-size: var(--font-size-medium);
+    --nav-item-letter-spacing: .04rem;
+    --nav-item-display: inline-block;
+    --nav-item-margin: 0 0 0 2rem;
+    --nav-item-link-hover: var(--color-white);
+
+     /** BUTTON **/
+     --button-display: inline-block;
+     --button-padding: 1.5rem 3rem;
+     --button-border: var(--color-primary) solid 0.2rem;
+     --button-color: var(--color-black);
+     --button-text-decoration: none;
+     --button-font-size: var(--font-size-large);
+     --button-hover-color: var(--color-white);
+     --button-hover-text-decoration: none;
+     --button-hover-background: var(--color-primary);
+
+     /** MOTION **/
+    --transition-duration: .3s;
+    --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
+   }
+
+   /* Font import
+      ============================= */
+      @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+    
+
+    /* Base
+      ============================= */
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+
+    
+  /* Header
+      ============================= */
+      .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 25%;
+        align-items: center;
+        z-index: 1000;
+        position: relative;
+        top: 20px;
+
+      }
+
+    
+
+  /* Navbar
+      ============================= */
+  
+      /*nav {
+      padding: 10px 20px; 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      }*/
+
+      nav img{
+        width: 200px ;
+        cursor: pointer;
+       }
+       .logo{
+        padding: 20px;
+       }
+     .nav-menu{
+        flex:1;
+        text-align: right;
+     }
+       .nav-menu ul li {
+        list-style: none;
+        display:var(--nav-item-display);
+        margin: 8px  20px;
+        position: relative;
+       }
+
+       .nav-menu ul li a {
+        text-decoration: none;
+        color: var(--color-white);
+        font-size: 13px;
+        transition: all var(--transition-duration) linear;
+    
+       }
+
+       a {
+        color: var(--color-white);
+      }
+
+       .nav-menu a:hover{
+        color: var(--color-primary);
+       }
+      
+
+      /* HERO Section
+      ============================= */
+      .section-hero {
+        height: 100vh;
+        width: 100%;
+        background-image: url("images/headphones_hero_1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position:relative;
+        color:var(--color-white);
+        top: -90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+          }
+      .section-body {
+        width: 90%;
+        color: var(--color-white) ;
+        position: absolute ;
+        top: 30% ;
+        left:50%;
+        transform: translate(-50%,50%);
+        text-align: center;
+      }
+      .section-body h1 {
+        font-size:32px;
+      }
+      .section-body p {
+        font-size: 16px ;
+      }
+
+    .button {
+        display: inline-block;
+        padding:12px 34px;
+        text-decoration: none;
+        border:1px solid var(--color-primary);
+        border-radius: 22px;
+        color: var(--color-white);
+        font-size: 14px;
+        position: relative;
+        cursor: pointer;
+        background: var(--color-primary);
+        margin: 10px 0 40px;
+    }
+    
+    .button:hover{
+      color: rgb(249, 249,249);
+      opacity: 0.9;
+    }
+
+    /* Hamburger Icon Mobile 1
+      ============================= */
+
+
+    
+      /* Hamburger Icon Mobile 2
+      ============================= */
+      /*  *, *::after, *::before{
+        box-sizing: border-box;
+      }
+      :root{
+        --bar-width:60px;
+        --bar-height:8px;
+        --hamburger-gap:6px;
+        --hamburger-margin:5px;
+        --hamburger-height: calc((var(--bar-height)*3) + (var(--hamburger-gap)*2));
+        --animaation-timing:200ms ease-in-out;
+        --foreground:var(--color-white);
+        --background: var(--color-black);
+      }
+      .harmburger-menu{
+        --x-width: calc(var(var(--hamburger-height)+1.41421356237));
+        display:flex;
+        flex-direction: column;
+        gap:var(--hamburger-gap) ;
+        width: max-content;
+        position: absolute;
+        top: var(--hamburger-margin);
+        left:var(--hamburger-margin) ;
+        z-index: 2;
+        cursor:pointer;
+      }
+      
+
+      .harmburger-menu::before,
+      .harmburger-menu::after,
+      .harmburger-menu input {
+        content: " ";
+        width: var(--bar-width);
+        height: var(--bar-height);
+        background-color: var(--foreground);
+        border-radius: 9999px;
+        transform-origin: left center;
+        transition: opacity var(--animaation-timing), width var(--animaation-timing), 
+        rotate var(--animaation-timing), translate var(--animaation-timing);
+
+      }
+
+      .harmburger-menu input{
+        appearance: none;
+        padding:0;
+        margin: 0;
+        outline: none;
+        pointer-events:none;
+      }
+      .harmburger-menu:has(input:checked)::before{
+        rotate: 45deg;
+        width: var(--x-width);
+        translate:0 calc(var(--bar-height)/-2)
+      }
+      .harmburger-menu:has(input:checked)::after{
+        rotate: -45deg;
+        width:var(--x-width);
+        translate:0 calc(var(--bar-height)/2);
+      }
+      .harmburger-menu input:checked {
+        opacity: 0;
+        width: 0;
+      }
+      .nav-menu{
+        transition: translate var(--animaation-timing);
+        translate: -100%;
+        margin-top: calc(var(--hamburger-height)+ var(--hamburger-margin) + 1rem);
+        padding: 0.5rem 1rem;
+        
+      }
+
+      .harmburger-menu:has(input:checked) + .nav-menu{
+        translate: 0;
+      }*/

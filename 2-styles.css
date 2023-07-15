@@ -1,6 +1,8 @@
 /* Reset / Normalize
    ============================= */
 
+    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none} 
+
 
 /* Variables
    ============================= */
@@ -52,77 +54,126 @@
      /** MOTION **/
     --transition-duration: .3s;
     --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
+
+
+   /** FONTS **/
+    --font-family-base: 'Source-sans-Pro-Regular'; 
+    --font-family-title: 'Source-sans-Pro-Semibold'; 
+    --font-family-bold: 'Source-sans-Pro-Bold'; 
+ 
+    --font-size-x-small: 1rem; 
+    --font-size-small: 1.2rem; 
+    --font-size-medium: 1.6rem; 
+    --font-size-large: 1.8rem; 
+    --font-size-x-large: 2.3rem; 
+    --font-size-xx-large: 3.2rem; 
+    --font-weight-thin: 100; 
+    --font-weight-regular: 300; 
+    --font-weight-bold: 600; 
    }
 
    /* Font import
       ============================= */
-      @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+      @font-face { 
+        font-family: Source-sans-Pro-Bold; 
+        src: url("./fonts/SourceSansPro-Bold.otf"); 
+        font-weight: var(--font-weight-bold); 
+      } 
+      @font-face { 
+        font-family: Source-sans-Pro-Regular; 
+        src: url("./fonts/SourceSansPro-Regular.otf"); 
+        font-weight: var(--font-weight-regular); 
+      } 
+      @font-face { 
+        font-family: Source-sans-Pro-Semibold; 
+        src: url("./fonts/SourceSansPro-Semibold.otf"); 
+        font-weight: var(--font-weight-bold); 
+      } 
 
     
 
     /* Base
       ============================= */
-      *{
-        margin: 0;
-        padding: 0;
-        font-family: 'Source Sans Pro', sans-serif;
-      }
+      *, *:after, *:before { 
+        box-sizing: border-box; 
+        margin: 0; 
+        padding: 0; 
+      } 
+
+      body { 
+        width: 100%; 
+        height: 100%; 
+      } 
+
 
     
   /* Header
       ============================= */
-      .container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 25%;
-        align-items: center;
-        z-index: 1000;
-        position: relative;
-        top: 20px;
+  
 
-      }
+    /*CONTAINERS*/ 
+    .header-container, 
+    .what-we-do-container,
+    .our-results-container,
+    .footer-container {
+      max-inline-size: 1000px; 
+      inline-size: 400px; 
+      margin: 0 auto; 
+      
+    }
 
+    @media screen and (min-width: 1024px) { 
+      .header-container, 
+    .what-we-do-container,
+    .our-results-container,
+    .footer-container { 
+        inline-size: 1000px; 
+      } 
+    }
+    
+    
     
 
   /* Navbar
       ============================= */
   
-      /*nav {
-      padding: 10px 20px; 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      }*/
 
-      nav img{
-        width: 200px ;
+      .nav-menu img{
+        margin: 40px auto;
         cursor: pointer;
        }
-       .logo{
-        padding: 20px;
-       }
+       
      .nav-menu{
-        flex:1;
-        text-align: right;
+      margin:auto; 
+      width: 85%;
+      padding: 35px 0; 
+      display: flex;
+      align-items: center;
+      justify-content: space-between; 
      }
-       .nav-menu ul li {
-        list-style: none;
-        display:var(--nav-item-display);
-        margin: 8px  20px;
-        position: relative;
-       }
+      
+     .nav-menu ul li {
+      list-style: none;
+      display:var(--nav-item-display);
+      margin: 8px  20px;
+      position: relative;
+      
+     }
 
        .nav-menu ul li a {
         text-decoration: none;
         color: var(--color-white);
         font-size: 13px;
         transition: all var(--transition-duration) linear;
+        font-family: var(--font-family-base);
     
        }
+       input{
+        display: none;
+       }
 
-       a {
-        color: var(--color-white);
+      .top{
+        padding-top: 30px; 
       }
 
        .nav-menu a:hover{
@@ -132,106 +183,291 @@
 
       /* HERO Section
       ============================= */
-      .section-hero {
-        height: 100vh;
-        width: 100%;
-        background-image: url("images/headphones_hero_1.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        position:relative;
-        color:var(--color-white);
-        top: -90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        
+      .header{
+        background-image: url("images/headphones_hero_1.jpg"); 
+        background-size: 1920px 1080px; 
+        background-repeat: no-repeat; 
+        background-position: -575px -100px; 
+        max-block-size: 920px; 
+        min-block-size: 840px; 
+        margin: auto; 
+        padding-bottom: 20px; 
+        color: var(--white); 
+        text-align: center; 
           }
-      .section-body {
-        width: 90%;
-        color: var(--color-white) ;
-        position: absolute ;
-        top: 30% ;
-        left:50%;
-        transform: translate(-50%,50%);
-        text-align: center;
+     
+
+      .inner-1{
+        font-family: var(--font-family-title);
+        font-size: var(--font-size-x-large);
+        color: var(--color-white);
       }
-      .section-body h1 {
-        font-size:32px;
+      .inner-2{
+        font-family:var(--font-family-base) ;
+        font-size: var(--font-size-small);
+        font-weight:var(--font-weight-regular) ;
+        margin: 20px auto;
+        color: var(--color-white);
       }
-      .section-body p {
-        font-size: 16px ;
+      .outer{
+        line-height: 30px;
+        margin-block-start: 65px;
+        font-family: var(--font-family-base);
+        font-size: var(--font-size-x-small);
+        font-weight: var(--font-weight-thin);
+        color: var(--color-white);
+        
       }
 
+
     .button {
-        display: inline-block;
-        padding:12px 34px;
+        
         text-decoration: none;
         border:1px solid var(--color-primary);
         border-radius: 22px;
         color: var(--color-white);
         font-size: 14px;
-        position: relative;
         cursor: pointer;
         background: var(--color-primary);
-        margin: 10px 0 40px;
+        font-family: var(--font-family-base);
+        letter-spacing: .5px; 
+        block-size: 48px; 
+        inline-size: 160px; 
+        
     }
     
     .button:hover{
       color: rgb(249, 249,249);
       opacity: 0.9;
     }
+    /* Hero section Mobile responsiveness
+      ============================= */
+      @media screen and (max-width: 480px){
 
-      /* What we do Section
+        .header-container, 
+        .what-we-do-container,
+        .our-results-container,
+        .footer-container{
+          inline-size: 400px; 
+    }
+
+    .section-hero{
+      background-repeat: no-repeat; 
+      background-position: -600px -40px;
+    }
+
+    .inner-1{
+      inline-size: 390px; 
+      font-size: 22px; 
+      margin: 5px auto; 
+    }
+    
+    .inner-2{
+      inline-size: 430px; 
+      font-size: var(--font-size-x-small); 
+      margin: 10px auto; 
+    }
+
+    .button{
+      margin: 20px auto; 
+    }
+
+    .outer{
+      inline-size: 340px; 
+      margin: 20px auto; 
+      text-align: justify;
+    }
+  }
+    /* Hamburger Icon Mobile 1
+    trial 2
+      ============================= */
+     /* .top:first-child { 
+        text-align-last: start; 
+      } 
+      .nav-icon { 
+        margin-top: 5px; 
+        margin-left: 10px; 
+        inline-size: 95px; 
+        display: inline-block; 
+        vertical-align: top; 
+        text-align: start; 
+      } 
+      .bar-icon { 
+        inline-size: 13px; 
+        position: relative; 
+      } 
+      .top input { 
+        visibility: hidden; 
+        position: absolute; 
+      } 
+      .top input:checked + .nav-icon .bar-icon { 
+        background-color: unset; 
+      } 
+      .top input:checked ~ .nav-items { 
+        display: block; 
+      } 
+      .bar-icon::after { 
+        inline-size: 18px; 
+        inset-block-start: 4px; 
+      } 
+      .bar-icon::before { 
+        inline-size: 20px; 
+        inset-block-end: 4px; 
+      } */
+      /* Screen will display "X" when navbar is clicked */ 
+       
+      /*.top input:checked + .nav-icon .bar-icon::after { 
+        transform: rotate(-45deg); 
+        inset-block-start: 0; 
+        inline-size: 20px; 
+      } 
+      .top input:checked + .nav-icon .bar-icon::before { 
+        transform: rotate(45deg); 
+        inset-block-end: 0; 
+      } */
+      /* Animation/positions for icon */ 
+       
+     /* .bar-icon, .bar-icon::after, .bar-icon::before { 
+        block-size: 2px; 
+        display: inline-block; 
+        border-radius: 1px; 
+        background-color: var(--white); 
+      } 
+      .bar-icon::after, .bar-icon::before { 
+        inset-inline-start: 0; 
+        content: ""; 
+        position: absolute; 
+        transform: rotate(0); 
+        transition: ease-out 0.3s; 
+      } */
+
+      /* Navbar Mobile
+      ============================= */
+
+     /* .nav-menu ul{
+        display: none; 
+        list-style: none; 
+       }
+       .logo{
+        width: 160px; 
+        height: auto;
+       }
+     .nav-menu{
+      min-block-size: 100px; 
+      margin-block-end: 225px; 
+     }
+       .nav-menu ul li {
+        letter-spacing: 0; 
+        min-height: 15px; 
+        min-width: 80px; 
+        margin: 0 5px; 
+        inline-size: 75px; 
+        margin:25px auto; 
+        
+       }*/
+
+        /* What we do Section
       ============================= */
       .what-we-do {
-       width: 80%;
-       margin: auto;
-       text-align: center;
-       padding-top: 30px;
-       padding-bottom: 90px;
+        max-block-size: 1920px; 
+        max-inline-size: 100%; 
+        text-align: center;
+       
+        
+        
       }
-      .what-we-do h1{
-        font-size: 32px;
-      }
-
-      .what-we-do p{
-        font-size: 16px;
-        padding: 20px;
-        font-weight: 100px;
+      .title{
+        font-family: var(--font-family-bold);
+        font-size: var(--font-size-medium);
+        margin: 60px auto; 
+        margin-block-end: 40px; 
       }
 
-      .row{
-        margin-top: 5%;
+      .content{
+        font-family: var(--font-family-base);
+        max-inline-size: 600px; 
+        margin: auto; 
+        line-height: 25px; 
+      }
+
+      .row{ 
+        margin: 30px auto; 
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+       
       }
 
       .row-col{
-        flex-basis: 31%;
-        margin-bottom: 5%;
-        padding: 20px 12px;
+        margin-block-end: 100px; 
+        margin-top: 30px; 
         border-radius: 10px;
         box-sizing: border-box;
+        margin-inline: auto; 
+        max-inline-size: 200px; 
+        
       }
 
-      /* Results Section
+      .row .rol-col img{
+        font-size: 5rem; 
+      }
+
+      .row-col-title{
+        margin: 5px auto; 
+        font-family: var(--font-family-title); 
+      }
+
+      .row-col-content{
+        font-family: var(--font-family-base); 
+        font-weight: var(--font-weight-thin); 
+        line-height: 25px; 
+        max-inline-size: 200px;  
+      }
+
+      /* What we do... Mobile responsiveness
       ============================= */
-      
-
-
+    @media screen and (max-width: 480px){
+        .row{
+           flex-direction: column;
+          } 
+          .row-col{
+            margin: 40px auto; 
+          }
+          .row-col-content{
+            inline-size: 340px; 
+            margin-inline: auto; 
+          }
+          .content{
+            inline-size: 340px;
+          }
+    }
+    
+     /* Results Section
+      ============================= */
       .our-results{
-        width: 100%;
-        margin:auto;
-        text-align: center;
-        padding: 100px 0;
+        padding-top: 50px; 
+        padding-bottom: 60px;
         background-image: url("images/headphones_hero_2.jpg");
-        background-position: center;
+        background-position: 50%; 
         background-size: cover;
+        background-repeat: no-repeat;
         color:var(--color-white);
+        text-align: center;
+        margin: auto;
         
+      }
 
+      .results-title{
+        font-family: var(--font-family-title); 
+        font-size: var(--font-size-large); 
+        margin: 60px auto;
+        margin-block-end: 40px;
+      }
+
+      .results-content{
+        max-inline-size: 600px; 
+        margin: 20px auto; 
+        line-height: 25px; 
+        font-family: var(--font-family-base); 
       }
       .row-1{
         margin-top: 5%;
@@ -240,132 +476,58 @@
       } 
 
       .row-col-1{
-        flex-basis: 31%;
-        margin-bottom: 5%;
-        padding: 20px 12px;
-        border-radius: 10px;
-        box-sizing: border-box;
+        block-size: 220px; 
+        inline-size: 220px; 
+        margin-block-start: auto; 
+        margin: auto; 
       }
 
-      /*.layer{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }*/
-      
-
-       /* .our-results{
-        height: 100vh;
-        width: 100%;
-        background-image: url("images/headphones_hero_2.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        position:relative;
-        color:var(--color-white);
-        top: -90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }*/
-
-     /* .results h1 {
-        padding-bottom: 10px;
+      .row-col-1 .layer{
+        background-image: url("images/pentagone.png"); 
+        background-repeat: no-repeat; 
+        background-size: 95%; 
+        background-position: 50%; 
+        padding-block-start: 60px; 
       }
 
-      .results p{
-        font-size: 16px;
-        padding: 30px;
-        font-weight: 100px;
+      .layer{
+        margin: auto; 
+        padding: auto; 
+        width: 200px; 
+        height: 200px; 
       }
 
-      .row-1{
-        margin-top: 5%;
-        display: flex;
-        justify-content: space-between;
-      }*/
+      .layer span{
+        font-family: var(--font-family-bold); 
+        font-size: var(--font-size-xx-large); 
+        padding-top: 250px; 
+        width: 150px; 
+        height: 150px; 
+        margin: auto; 
+        font-family: var(--font-family-bold); 
+      }
+
+      .layer p{
+        font-family: var(--font-family-base); 
+        margin: 10px auto;
+      }
 
       
- 
-
-    /* Hamburger Icon Mobile 1
+/* Our results Mobile responsiveness
       ============================= */
+    @media screen and (max-width: 480px){
+        .row-1{
+           flex-direction: column;
+          } 
+          .our-results{
+            background-color: unset; 
+            background-size: cover; 
+            padding: auto; 
+            margin: 5px auto; 
+          }
 
-
-    
-      /* Hamburger Icon Mobile 2
-      ============================= */
-      /*  *, *::after, *::before{
-        box-sizing: border-box;
-      }
-      :root{
-        --bar-width:60px;
-        --bar-height:8px;
-        --hamburger-gap:6px;
-        --hamburger-margin:5px;
-        --hamburger-height: calc((var(--bar-height)*3) + (var(--hamburger-gap)*2));
-        --animaation-timing:200ms ease-in-out;
-        --foreground:var(--color-white);
-        --background: var(--color-black);
-      }
-      .harmburger-menu{
-        --x-width: calc(var(var(--hamburger-height)+1.41421356237));
-        display:flex;
-        flex-direction: column;
-        gap:var(--hamburger-gap) ;
-        width: max-content;
-        position: absolute;
-        top: var(--hamburger-margin);
-        left:var(--hamburger-margin) ;
-        z-index: 2;
-        cursor:pointer;
-      }
-      
-
-      .harmburger-menu::before,
-      .harmburger-menu::after,
-      .harmburger-menu input {
-        content: " ";
-        width: var(--bar-width);
-        height: var(--bar-height);
-        background-color: var(--foreground);
-        border-radius: 9999px;
-        transform-origin: left center;
-        transition: opacity var(--animaation-timing), width var(--animaation-timing), 
-        rotate var(--animaation-timing), translate var(--animaation-timing);
-
-      }
-
-      .harmburger-menu input{
-        appearance: none;
-        padding:0;
-        margin: 0;
-        outline: none;
-        pointer-events:none;
-      }
-      .harmburger-menu:has(input:checked)::before{
-        rotate: 45deg;
-        width: var(--x-width);
-        translate:0 calc(var(--bar-height)/-2)
-      }
-      .harmburger-menu:has(input:checked)::after{
-        rotate: -45deg;
-        width:var(--x-width);
-        translate:0 calc(var(--bar-height)/2);
-      }
-      .harmburger-menu input:checked {
-        opacity: 0;
-        width: 0;
-      }
-      .nav-menu{
-        transition: translate var(--animaation-timing);
-        translate: -100%;
-        margin-top: calc(var(--hamburger-height)+ var(--hamburger-margin) + 1rem);
-        padding: 0.5rem 1rem;
-        
-      }
-
-      .harmburger-menu:has(input:checked) + .nav-menu{
-        translate: 0;
-      }*/
+          .results-content{
+            inline-size: 340px; 
+            margin: 20px auto; 
+          }
+    }
